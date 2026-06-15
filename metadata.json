@@ -1,0 +1,6 @@
+{
+  "name": "Developer Portfolio",
+  "description": "A luxury, high-end interactive developer portfolio website featuring Lenis smooth scrolling, immersive GSAP cursor tracking, magnetic buttons, parallax image scroll, and stunning visual layouts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

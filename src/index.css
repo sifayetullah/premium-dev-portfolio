@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg-dark: #070708;
+  --color-card-dark: rgba(18, 18, 22, 0.45);
+  --color-gold: #c5a880;
+  --color-gold-hover: #b09168;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+    background-color: var(--color-bg-dark);
+    color: #e4e4e7;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+    position: relative;
+    /* Custom scrollbar for webkit */
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #070708;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 9999px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #3f3f46;
+    }
+  }
+
+  /* Selection styling */
+  ::selection {
+    background-color: rgba(197, 168, 128, 0.25);
+    color: #ffffff;
+  }
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(15, 15, 20, 0.55);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.glass-panel-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(22, 22, 28, 0.7);
+  border-color: rgba(197, 168, 128, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom cursor for high-end websites */
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #c5a880;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.custom-cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+/* Lenis smooth scrolling rules */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Typography reveal effects */
+.split-line {
+  overflow: hidden;
+  display: block;
+}
+
+.split-char {
+  display: inline-block;
+  transform: translateY(110%);
+}
+
+/* Ambient glows */
+.glow-blur {
+  filter: blur(120px);
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
+/* Magnetic effect helper */
+.magnetic-wrap {
+  display: inline-block;
+  cursor: pointer;
+}
